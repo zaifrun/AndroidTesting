@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidTesting</string>
+    <string-array name="colors_array">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+</resources>
