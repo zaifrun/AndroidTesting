@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //colors that are constants.
     int[] COLORS = {Color.RED, Color.BLUE,Color.GREEN };
 
     @Override

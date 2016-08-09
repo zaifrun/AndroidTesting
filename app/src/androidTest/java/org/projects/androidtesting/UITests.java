@@ -28,6 +28,7 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
+//This is our test class for instrumentation tests (UI in this case)
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -75,16 +76,22 @@ public class UITests {
         mStringToBetyped = "martin";
     }
 
-
+    //This method test the spinner to change the color.
     @Test
     public void changeColor()
     {
+        //Find the spinner - click on it
         onView(withId(R.id.spinner)).perform(click());
+        //Oo through all strings (onData), click on the one that is "Blue"
         onData(allOf(is(instanceOf(String.class)), is("Blue"))).perform(click());
+        //Check that the textcolor textview now actually has the textcolor set to blu
+        //note - the withCurrentTextColor is a custom defined matcher - see elsewhere in this file
         onView(withId(R.id.textColor)).check(matches(withCurrentTextColor(Color.BLUE)));
 
     }
 
+    //This test will input some text into the text field, then click the button
+    //to save and and test that it was actually saved.
     @Test
     public void changeText() {
         // Type text and then press the button.
