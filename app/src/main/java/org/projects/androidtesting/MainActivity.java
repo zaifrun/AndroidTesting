@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+//This is the main activity class
 public class MainActivity extends AppCompatActivity {
 
     //colors that are constants.
