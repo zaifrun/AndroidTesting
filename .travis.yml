@@ -1,3 +1,7 @@
 language: android
-sudo: required
 jdk: oraclejdk8
+components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+- tools
+- platform-tools
