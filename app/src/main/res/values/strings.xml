@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AndroidTesting</string>
+    <string name="enter_some_text">Enter some text:</string>
+    <string name="save_the_text">Save the text</string>
+    <string name="test_color_selected">Test color selected</string>
     <string-array name="colors_array">
         <item>Red</item>
         <item>Blue</item>

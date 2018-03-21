@@ -21,12 +21,12 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
+
 
 //This is our test class for instrumentation tests (UI in this case)
 
@@ -42,7 +42,6 @@ public class UITests {
      * @param integerMatcher {@link Matcher} of {@link String} with text to match
      */
     public static Matcher<View> withCurrentTextColor(final Matcher<Integer> integerMatcher) {
-        checkNotNull(integerMatcher);
         return new BoundedMatcher<View, TextView>(TextView.class) {
             @Override
             public void describeTo(Description description) {
@@ -59,7 +58,7 @@ public class UITests {
 
     /**
      * Returns a matcher that matches {@link TextView} based on it's text property value. Note:
-     * View's Sugar for withTextColor(is("string")).
+     * View's Syntatic Sugar for withTextColor(is("string")).
      */
     public static Matcher<View> withCurrentTextColor(int color) {
         return withCurrentTextColor(is(color));
@@ -69,7 +68,7 @@ public class UITests {
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
             MainActivity.class);
 
-    String mStringToBetyped;
+    private String mStringToBetyped;
 
     @Before
     public void initValidString() {
@@ -82,11 +81,11 @@ public class UITests {
     {
         //Find the spinner - click on it
         onView(withId(R.id.spinner)).perform(click());
-        //Oo through all strings (onData), click on the one that is "Blue"
+        //loop through all strings (onData), click on the one that is "Blue"
         onData(allOf(is(instanceOf(String.class)), is("Blue"))).perform(click());
         //Check that the textcolor textview now actually has the textcolor set to blu
         //note - the withCurrentTextColor is a custom defined matcher - see elsewhere in this file
-        onView(withId(R.id.textColor)).check(matches(withCurrentTextColor(Color.BLUE)));
+        onView(withId(R.id.textColor)).check(matches(withCurrentTextColor(is(Color.BLUE))));
 
     }
 

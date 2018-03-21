@@ -25,7 +25,5 @@ public class CalculatorUnitTest {
     @Test
     public void multiplication_test() throws Exception {
         assertEquals(24, calc.multiplication(6,4));
-
-
     }
 }

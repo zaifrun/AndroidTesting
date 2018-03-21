@@ -14,29 +14,35 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter some text:"/>
+        android:textSize="@dimen/textSize"
+        android:text="@string/enter_some_text"/>
     <TextView
         android:layout_width="wrap_content"
+        android:textSize="@dimen/textSize"
         android:id="@+id/textView"
         android:layout_height="wrap_content"/>
     <EditText
         android:minEms="10"
         android:id="@+id/editText"
+        android:textSize="@dimen/textSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/saveButton"
-        android:text="Save the text"
+        android:text="@string/save_the_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-    android:layout_width="wrap_content"
-    android:id="@+id/textColor"
-    android:text="Test color selected"
-    android:layout_height="wrap_content"/>
+        android:layout_width="wrap_content"
+        android:id="@+id/textColor"
+        android:textSize="@dimen/textSize"
+        android:text="@string/test_color_selected"
+        android:layout_height="wrap_content"/>
+
     <Spinner
         android:layout_width="wrap_content"
         android:id="@+id/spinner"
+        android:textSize="@dimen/textSize"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
