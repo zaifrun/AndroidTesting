@@ -83,7 +83,7 @@ public class UITests {
         onView(withId(R.id.spinner)).perform(click());
         //loop through all strings (onData), click on the one that is "Blue"
         onData(allOf(is(instanceOf(String.class)), is("Blue"))).perform(click());
-        //Check that the textcolor textview now actually has the textcolor set to blu
+        //Check that the textcolor textview now actually has the textcolor set to blue
         //note - the withCurrentTextColor is a custom defined matcher - see elsewhere in this file
         onView(withId(R.id.textColor)).check(matches(withCurrentTextColor(is(Color.BLUE))));
 
